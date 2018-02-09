@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,5 +11,9 @@
 </head>
 <body>
   <app-root></app-root>
-</body>
+  <script type="text/javascript" src="{% static "dist/inline.bundle.js" %}"></script>
+  <script type="text/javascript" src="{% static "dist/polyfills.bundle.js" %}"></script>
+  <script type="text/javascript" src="{% static "dist/styles.bundle.js" %}"></script>
+  <script type="text/javascript" src="{% static "dist/vendor.bundle.js" %}"></script>
+  <script type="text/javascript" src="{% static "dist/main.bundle.js" %}"></script></body>
 </html>
