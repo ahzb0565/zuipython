@@ -2,57 +2,12 @@
     <div class="navbar">
         <a href="/" class="nav-brand">ZuiPython</a>
         <ul class="levels">
-            <li><a href="#">初级</a></li>
-            <li><a href="#">中级</a></li>
-            <li><a href="#">高级</a></li>
+            <li *ngFor="let level of levels"><a href="#">{{ level.name }}</a></li>
         </ul>
     </div>
 </div>
 
 <div id="main">
-    <div class="catalog">
-        <h3>目录</h3>
-        <div>
-            <ol>
-                <li>
-                    <p>Windows</p>
-                    <div>
-                        <ul>
-                            <li>简介</li>
-                            <li>简单的脚本</li>
-                            <li>Excel</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <p>APPs</p>
-                    <div>
-                        <ul>
-                            <li>简介</li>
-                            <li>android 应用</li>
-                            <li>windows 应用</li>
-                            <li>Linux 应用</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <p>Frameworks</p>
-                    <div>
-                        <ul>
-                            <li>简介</li>
-                        </ul>
-                    </div>
-                </li>
-            </ol>
-        </div>
-    </div>
-
-    <div class="content">
-        <h2>第一篇文章</h2>
-        <small>作者： xxx</small>
-        <hr />
-        <pre>
-            进阶吧， 少年！
-        </pre>
-    </div>
+    <app-catalog></app-catalog>
+    <app-article></app-article>
 </div>

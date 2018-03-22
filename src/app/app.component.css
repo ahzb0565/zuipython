@@ -53,23 +53,3 @@ body {
     color: white;
 }
 
-
-/* catalog style */
-.catalog {
-    position: fixed;
-    padding: 20px;
-    border-right: solid 1px grey;
-    min-width: 200px;
-    height: 100%;
-    overflow: auto;
-}
-
-/* content style */
-.content {
-    position: fixed;
-    margin-left: 250px;
-    width: 78%;
-    padding: 20px;
-    overflow: auto;
-}
-
