@@ -17,9 +17,6 @@
           "allowOutsideOutDir": true
         }
       ],
-      "excluded": [
-        "*.html"
-      ],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
