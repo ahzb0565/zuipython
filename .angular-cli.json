@@ -9,13 +9,7 @@
       "outDir": "static/dist",
       "assets": [
         "assets",
-        "favicon.ico",
-        {
-          "input": ".",
-          "glob": "*.html",
-          "output": "../../templates",
-          "allowOutsideOutDir": true
-        }
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
