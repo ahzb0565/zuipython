@@ -9,5 +9,5 @@ urlpatterns = [
     path('topics/', TopicAPIView.as_view(), name='topic-list'),
     path('topic/<int:pk>/', TopicAPIView.as_view(), name='topic-detail'),
     path('articles/', ArticleAPIView.as_view(), name='article-list'),
-    path('article/<int:pk>', ArticleAPIView.as_view(), name='article-detail'),
+    path('article/<int:pk>/', ArticleAPIView.as_view(), name='article-detail'),
 ]

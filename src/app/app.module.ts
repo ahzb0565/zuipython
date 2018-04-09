@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ApiService } from './apis.service';
 import { CatalogComponent } from './catalog/catalog.component';
 import { ArticleComponent } from './article/article.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,10 +16,11 @@ import { ArticleComponent } from './article/article.component';
     ArticleComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
-    ApiService
+    ApiService,
   ],
   bootstrap: [AppComponent]
 })

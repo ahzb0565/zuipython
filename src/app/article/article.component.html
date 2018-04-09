@@ -1,8 +1,11 @@
-<div class="content">
+<div *ngIf="article" class="content">
     <h2>{{ article.title }}</h2>
     <small>作者: xxx</small>
     <hr />
     <pre>
         {{ article.body}}
     </pre>
+</div>
+<div *ngIf="!article">
+  <p>Loading...</p>
 </div>

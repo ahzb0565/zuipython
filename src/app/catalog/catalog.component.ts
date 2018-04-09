@@ -14,7 +14,9 @@ export class CatalogComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   getLevelTree(){
-    this.levelTree = this.apiService.getTree();
+    this.apiService.getTree().subscribe((tree) => {
+      this.levelTree = tree;
+    });
   }
 
   ngOnInit() {

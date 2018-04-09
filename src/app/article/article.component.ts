@@ -6,6 +6,7 @@ import { ApiService } from '../apis.service';
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css']
 })
+
 export class ArticleComponent implements OnInit {
 
   article;
@@ -13,7 +14,9 @@ export class ArticleComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   getArticle(){
-    this.article = this.apiService.getArticle();
+    this.apiService.getArticle(1).subscribe((article) => {
+      this.article = article;
+    });
   }
 
   ngOnInit() {

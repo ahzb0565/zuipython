@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
-import { TOPICS } from './mockTopics';
-import { ARTICLE } from './mockArticle';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class ApiService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
   getTree(){
-    return TOPICS; // TODO: Fix me, should call real api
+    const url = '/api/topics/';
+    console.log(`Calling api ${url}`);
+    return this.http.get(url);
   }
 
-  getArticle(){
-    return ARTICLE; // TODO: Fix me, should call real api
+  getArticle(id){
+    const url = `/api/article/${id}/`;
+    console.log(`Calling api ${url}`);
+    return this.http.get(url);
   }
-
 }
