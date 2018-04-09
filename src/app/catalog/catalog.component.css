@@ -1,9 +1,0 @@
-/* catalog style */
-.catalog {
-    position: fixed;
-    padding: 20px;
-    border-right: solid 1px grey;
-    width: 200px;
-    height: 100%;
-    overflow: auto;
-}
