@@ -3,6 +3,10 @@ import App from './App'
 import NavBar from './components/NavBar'
 import Catalog from './components/Catalog'
 import router from './router'
+import Router from 'vue-router'
+
+Vue.use(Router)
+
 
 new Vue({
     el: '#navbar',

@@ -1,8 +1,5 @@
-import Vue from 'Vue'
 import VueRouter from 'vue-router'
 import Article from '../components/Article'
-
-Vue.use(VueRouter)
 
 const test = {template: '<p>test</p>'}
 
