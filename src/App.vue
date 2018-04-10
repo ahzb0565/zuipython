@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <h1>Welcome!</h1>
+    <div id="article">
         <router-view />
     </div>
 </template>
@@ -10,3 +9,14 @@ export default {
     name: 'App'
 }
 </script>
+
+<style>
+#article {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 10px;
+    top: 60px;
+    padding-left: 250px;
+}
+</style>
