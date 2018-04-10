@@ -4,8 +4,12 @@ import NavBar from './components/NavBar'
 import Catalog from './components/Catalog'
 import router from './router'
 import Router from 'vue-router'
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(Router)
+Vue.use(BootstrapVue)
 
 
 new Vue({
