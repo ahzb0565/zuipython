@@ -15,10 +15,9 @@ class LevelSerializers(serializers.ModelSerializer):
 
 
 class TopicSerializers(serializers.ModelSerializer):
-    articles = serializers.HyperlinkedRelatedField(
+    articles = serializers.PrimaryKeyRelatedField(
         many=True,
-        read_only=True,
-        view_name='api:article-detail'
+        read_only=True
     )
 
     class Meta:

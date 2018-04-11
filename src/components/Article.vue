@@ -3,7 +3,8 @@
         <div v-if="error">{{ error }}</div>
         <div v-else-if="!this.title">Loading ...</div>
         <div v-else>
-            <center><h3>{{ title }}</h3></center>
+            <center><h1>{{ title }}</h1></center>
+            <br />
             <div class="article-body">
                 <vue-markdown>{{ body }}</vue-markdown>
             </div>
@@ -24,7 +25,9 @@ export default {
     }),
     components: { VueMarkdown },
     created(){
-        if(this.id){
+        let id = this.$route.params.id
+        if(id){
+            this.id = id
             axios.get(`/api/article/${this.id}/`)
                 .then((response) => {
                     this.title = response.data.title

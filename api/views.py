@@ -14,9 +14,14 @@ class TopicAPIView(APIView):
     def get(self, request, pk=None):
         if pk:
             serializer = TopicSerializers(Topic.objects.get(pk=pk), context={'request': request})
+            return Response(serializer.data)
         else:
             serializer = TopicSerializers(Topic.objects.all(), many=True, context={'request': request})
-        return Response(serializer.data)
+            topics = list(serializer.data)
+            for topic in topics:
+                topic['articles'] = [{'id': article_id, 'title': Article.objects.get(id=article_id).title}
+                                     for article_id in topic['articles']]
+            return Response(topics)
 
 
 class ArticleAPIView(APIView):

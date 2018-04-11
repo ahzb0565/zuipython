@@ -10,7 +10,7 @@ export default new VueRouter({
         name: 'Welcome',
         component: Welcome
     },{
-        path: '/article',
+        path: '/article/:id',
         name: 'Article',
         component: Article
     }]

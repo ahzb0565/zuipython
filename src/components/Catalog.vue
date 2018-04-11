@@ -8,7 +8,9 @@
               <b-list-group-item>{{ topic.name }}</b-list-group-item>
               <b-list-group-item>
                 <ul>
-                  <li v-for="article in topic.articles">{{ article }}</li>
+                  <li v-for="article in topic.articles" class="article-item">
+                    <a v-bind:href="translateToHref(article.id)">{{ article.title }}</a>
+                  </li>
                 </ul>
               </b-list-group-item>
             </b-list-group>
@@ -40,6 +42,9 @@ export default {
         filterTopics: function(topics){
             if (topics)
                 return topics.filter((item) => item.articles.length > 0)
+        },
+        translateToHref: function(id){
+            return `#/article/${id}`
         }
     }
 }
@@ -50,12 +55,17 @@ export default {
     position: absolute;
     top: 60px;
     left: 0px;
-    bottom: 0px;
     overflow-y: auto;
     width: 250px;
+    min-height: 500px;
+    z-index: 1000;
 }
 
 .sidebar {
     height: 100%;
+}
+
+.article-item {
+    list-style: none;
 }
 </style>
