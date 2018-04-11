@@ -29,12 +29,18 @@ export default {
     created() {
         axios.get('/api/topics/')
             .then((response)=> {
-                this.topics = response.data
+                this.topics = this.filterTopics(response.data)
             })
             .catch((error) => {
                 console.log(error)
                 this.error = error
             })
+    },
+    methods: {
+        filterTopics: function(topics){
+            if (topics)
+                return topics.filter((item) => item.articles.length > 0)
+        }
     }
 }
 </script>

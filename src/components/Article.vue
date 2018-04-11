@@ -27,7 +27,6 @@ export default {
         if(this.id){
             axios.get(`/api/article/${this.id}/`)
                 .then((response) => {
-                    console.log(response.data)
                     this.title = response.data.title
                     this.body = response.data.body
                 })
