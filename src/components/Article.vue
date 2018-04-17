@@ -1,12 +1,12 @@
 <template>
-    <div>
+    <div class="article">
         <div v-if="error">{{ error }}</div>
-        <div v-else-if="!this.title">Loading ...</div>
+        <div v-else-if="!article">Loading ...</div>
         <div v-else>
-            <center><h1>{{ title }}</h1></center>
+            <center><h1>{{ article.title }}</h1></center>
             <br />
             <div class="article-body">
-                <vue-markdown>{{ body }}</vue-markdown>
+                <vue-markdown :source="article.body"></vue-markdown>
             </div>
         </div>
     </div>
@@ -18,31 +18,20 @@ import axios from 'axios'
 
 export default {
     name: 'Article',
-    data: () => ({
-        title: null,
-        body: null,
-        id: 1
-    }),
-    components: { VueMarkdown },
-    created(){
-        let id = this.$route.params.id
-        if(id){
-            this.id = id
-            axios.get(`/api/article/${this.id}/`)
-                .then((response) => {
-                    this.title = response.data.title
-                    this.body = response.data.body
-                })
-                .catch((error) => {
-                    console.log(error)
-                    this.error = error;
-                })
-        }
-    }
+    props: ['article', 'error'],
+    components: { VueMarkdown }
 }
 </script>
 
 <style scoped>
+.article {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 10px;
+    top: 60px;
+    padding-left: 250px;
+}
 .article-body {
     margin: 0px 10px;
 }

@@ -1,17 +1,16 @@
 import VueRouter from 'vue-router'
 import Article from '../components/Article'
-import Welcome from '../components/Welcome'
+import Content from '../components/Content'
 
 const test = {template: '<p>test</p>'}
 
 export default new VueRouter({
     routes: [{
         path: '/',
-        name: 'Welcome',
-        component: Welcome
+        redirect: '/1/'
     },{
-        path: '/article/:id',
-        name: 'Article',
-        component: Article
+        path: '/:id/',
+        name: 'Content',
+        component: Content
     }]
 })

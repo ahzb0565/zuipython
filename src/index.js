@@ -11,7 +11,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(Router)
 Vue.use(BootstrapVue)
 
-
 new Vue({
     el: '#navbar',
     components: { NavBar },
@@ -19,13 +18,7 @@ new Vue({
 })
 
 new Vue({
-    el: '#catalog',
-    components: { Catalog },
-    template: '<Catalog />'
-})
-
-new Vue({
-    el: '#article',
+    el: '#content',
     router,
     components: { App },
     template: '<App />'

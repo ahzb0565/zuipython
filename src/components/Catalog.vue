@@ -2,14 +2,14 @@
     <div id="sidebar">
         <b-card title="目录" class="sidebar">
           <div v-if="error">{{ error }}</div>
-          <div v-if="!topics">Loading...</div>
+          <div v-if="!topics || topics.length == 0">Loading...</div>
           <div v-else>
             <b-list-group flush v-for="topic in topics">
               <b-list-group-item>{{ topic.name }}</b-list-group-item>
               <b-list-group-item>
                 <ul>
                   <li v-for="article in topic.articles" class="article-item">
-                    <a v-bind:href="translateToHref(article.id)">{{ article.title }}</a>
+                    <a v-on:click="getArticle(article.id)" href="#">{{ article.title }}</a>
                   </li>
                 </ul>
               </b-list-group-item>
@@ -29,7 +29,7 @@ export default {
         error: null
     }),
     created() {
-        axios.get('/api/topics/')
+        axios.get('/api/topics/?level=' + this.$route.params.id)
             .then((response)=> {
                 this.topics = this.filterTopics(response.data)
             })
@@ -43,8 +43,8 @@ export default {
             if (topics)
                 return topics.filter((item) => item.articles.length > 0)
         },
-        translateToHref: function(id){
-            return `#/article/${id}`
+        getArticle: function(id){
+            this.$emit('article', {article: id})
         }
     }
 }
