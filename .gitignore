@@ -5,5 +5,4 @@ node_modules/
 *.pyc
 __pycache__
 static/dist*
-templates*
 .gitkeep
